@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
+    [Header("Stats")]
+    [SerializeField] int health;
+
     [Range(0f, 1f)] float currentSpeed = 1f;
 
     // Start is called before the first frame update

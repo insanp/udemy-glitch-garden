@@ -22,4 +22,11 @@ public class Projectile : MonoBehaviour
     {
         currentSpeed = speed;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("I hit: " + collision.name);
+        // reduce health
+        
+    }
 }

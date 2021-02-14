@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
+    [Header("Stats")]
+    [SerializeField] int health;
+
     [SerializeField] GameObject projectile, gun;
 
     // Start is called before the first frame update

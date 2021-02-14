@@ -1,0 +1,11 @@
+Player Experience :
+Strategic Thinking
+
+Core Mechanic :
+Place defenders to stop attackers
+
+Theme : 
+Garden
+
+Core Game Loop :
+Kill all the attackers to progress to the next level

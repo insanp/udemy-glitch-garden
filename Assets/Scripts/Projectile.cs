@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [Range(0f, 10f)][SerializeField] float currentSpeed = 5f;
+    [SerializeField] int damage = 50;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,12 @@ public class Projectile : MonoBehaviour
     {
         Debug.Log("I hit: " + collision.name);
         // reduce health
-        
+        var stats = collision.GetComponent<CharStats>();
+        var attacker = collision.GetComponent<Attacker>();
+        if (attacker && stats)
+        {
+            stats.DealDamage(damage);
+            Destroy(gameObject);
+        }
     }
 }

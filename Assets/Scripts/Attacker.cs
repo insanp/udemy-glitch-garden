@@ -22,4 +22,17 @@ public class Attacker : MonoBehaviour
     {
         currentSpeed = speed;
     }
+
+    public void HitFX()
+    {
+        StartCoroutine(Blink());
+    }
+
+    IEnumerator Blink()
+    {
+        var spriteRen = gameObject.GetComponent<SpriteRenderer>();
+        spriteRen.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        spriteRen.color = Color.white;
+    }
 }

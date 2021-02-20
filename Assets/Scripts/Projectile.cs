@@ -26,13 +26,14 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("I hit: " + collision.name);
+        //Debug.Log("I hit: " + collision.name);
         // reduce health
         var stats = collision.GetComponent<CharStats>();
         var attacker = collision.GetComponent<Attacker>();
         if (attacker && stats)
         {
             stats.DealDamage(damage);
+            attacker.HitFX();
             Destroy(gameObject);
         }
     }

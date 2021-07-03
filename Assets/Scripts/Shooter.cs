@@ -42,13 +42,13 @@ public class Shooter : MonoBehaviour
         {
             Debug.Log("shoot");
             // Animation state to shooting
-            animator.SetBool("IsAttacking", true);
+            animator.SetBool("isAttacking", true);
 
         } else
         {
             Debug.Log("idle");
             // Animation state to idle
-            animator.SetBool("IsAttacking", false);
+            animator.SetBool("isAttacking", false);
         }
     }
 

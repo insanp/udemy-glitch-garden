@@ -10,11 +10,13 @@ public class Shooter : MonoBehaviour
 
     [SerializeField] GameObject projectile, gun;
     AttackerSpawner myLaneSpawner;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         SetLaneSpawner();
+        animator = GetComponent<Animator>();
     }
 
     private void SetLaneSpawner()
@@ -40,11 +42,13 @@ public class Shooter : MonoBehaviour
         {
             Debug.Log("shoot");
             // Animation state to shooting
+            animator.SetBool("IsAttacking", true);
 
         } else
         {
             Debug.Log("idle");
             // Animation state to idle
+            animator.SetBool("IsAttacking", false);
         }
     }
 

@@ -33,7 +33,6 @@ public class Projectile : MonoBehaviour
         if (attacker && stats)
         {
             stats.DealDamage(damage);
-            attacker.HitFX();
             Destroy(gameObject);
         }
     }

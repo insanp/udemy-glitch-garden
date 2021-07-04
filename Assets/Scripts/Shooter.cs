@@ -41,6 +41,7 @@ public class Shooter : MonoBehaviour
         if (IsAttackerInLane())
         {
             // Animation state to shooting
+            Debug.Log("shoot");
             animator.SetBool("isAttacking", true);
 
         } else

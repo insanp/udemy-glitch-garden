@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,15 @@ public class Attacker : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.left * Time.deltaTime * currentSpeed);
+        UpdateAnimationState();
+    }
+
+    private void UpdateAnimationState()
+    {
+        if (!currentTarget)
+        {
+            ResumeMove();
+        }
     }
 
     public void SetMovementSpeed(float speed)
@@ -32,16 +42,21 @@ public class Attacker : MonoBehaviour
         currentTarget = target;
     }
 
-    public void HitFX()
+    public void ResumeMove()
     {
-        StartCoroutine(Blink());
+        animator.SetBool("isAttacking", false);
+        currentTarget = null;
     }
 
-    IEnumerator Blink()
+    public void DamageCurrentTarget(int damage)
     {
-        var spriteRen = gameObject.GetComponent<SpriteRenderer>();
-        spriteRen.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
-        spriteRen.color = Color.white;
+        if (!currentTarget) return;
+
+        CharStats targetStats = currentTarget.GetComponent<CharStats>();
+
+        if (targetStats)
+        {
+            targetStats.DealDamage(damage);
+        }
     }
 }

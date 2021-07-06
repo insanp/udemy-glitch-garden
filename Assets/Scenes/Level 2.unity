@@ -1245,11 +1245,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7940905578058126814, guid: 26012c6349be68a449af0a2451fb132f, type: 3}
   m_PrefabInstance: {fileID: 1144146961}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1541404359 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4307749776310403916, guid: 787a2c94a5e739441a27ea0f200b93a3, type: 3}
-  m_PrefabInstance: {fileID: 184805631}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1570064759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1424,10 +1419,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Controller
       objectReference: {fileID: 0}
-    - target: {fileID: 5159616541631799779, guid: fafdf29c40d3a474c865b368b912f761, type: 3}
-      propertyPath: winLabel
-      value: 
-      objectReference: {fileID: 1541404359}
     - target: {fileID: 7470525389384687342, guid: fafdf29c40d3a474c865b368b912f761, type: 3}
       propertyPath: m_RootOrder
       value: 8

@@ -8,9 +8,9 @@ public class AttackerSpawner : MonoBehaviour
     [SerializeField] float maxSpawnDelay = 15f;
     [SerializeField] Attacker[] attackerPrefabs;
 
-    int totalSpawn = 0;
+    [SerializeField] int totalSpawn = 0;
 
-    bool spawn = true;
+    [SerializeField] bool spawn = true;
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -21,6 +21,12 @@ public class AttackerSpawner : MonoBehaviour
             // spawn
             SpawnAttacker();
         }
+    }
+
+    public void StopSpawning()
+    {
+        spawn = false;
+        Debug.Log("Stop spawn");
     }
 
     private void SpawnAttacker()

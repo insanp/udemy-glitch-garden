@@ -9,7 +9,7 @@ public class DefenderSpawner : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("Mouse was clicked");
+        //Debug.Log("Mouse was clicked");
         Vector2 worldPos = GetSquareClicked();
         AttemptToPlaceDefenderAt(worldPos);
     }
@@ -45,14 +45,14 @@ public class DefenderSpawner : MonoBehaviour
         {
             // latest touch
             Touch touch = Input.GetTouch(0);
-            Debug.Log("Touch");
+            //Debug.Log("Touch");
         }
     }
 
     private void SpawnDefender(Vector2 worldPos)
     {
         Defender newDefender = Instantiate(defender, worldPos, Quaternion.identity) as Defender;
-        Debug.Log(worldPos);
+        //Debug.Log(worldPos);
     }
 
     private Vector2 GetSquareClicked()

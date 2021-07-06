@@ -41,6 +41,10 @@ public class AttackerSpawner : MonoBehaviour
             case 20:
                 maxSpawnDelay = 2f;
                 break;
+            case 50:
+                minSpawnDelay = 0.1f;
+                maxSpawnDelay = 1f;
+                break;
         }
     }
 

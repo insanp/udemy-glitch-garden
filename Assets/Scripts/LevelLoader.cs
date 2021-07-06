@@ -27,6 +27,17 @@ public class LevelLoader : MonoBehaviour
         LoadNextScene();
     }
 
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("Start Screen");
+    }
+
     public void LoadNextScene()
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;

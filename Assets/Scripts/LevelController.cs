@@ -8,8 +8,16 @@ public class LevelController : MonoBehaviour
     [SerializeField] int numOfAttackers = 0;
     [SerializeField] bool levelTimerFinished = false;
     [SerializeField] GameObject winLabel;
+    [SerializeField] GameObject loseLabel;
 
     [SerializeField] float waitForLoad = 5f;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        winLabel.SetActive(false);
+        loseLabel.SetActive(false);
+    }
 
     public void AttackerSpawned()
     {
@@ -34,6 +42,11 @@ public class LevelController : MonoBehaviour
         FindObjectOfType<LevelLoader>().LoadNextScene();
     }
 
+    public void HandleLoseCondition()
+    {
+        loseLabel.SetActive(true);
+    }
+
     public void LevelTimerFinished()
     {
         StopSpawners();
@@ -50,11 +63,7 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        winLabel.SetActive(false);
-    }
+    
 
     // Update is called once per frame
     void Update()

@@ -18,7 +18,8 @@ public class Attacker : MonoBehaviour
 
     private void OnDestroy()
     {
-        FindObjectOfType<LevelController>().AttackerKilled();
+        LevelController temp = FindObjectOfType<LevelController>();
+        if (temp) temp.AttackerKilled();
     }
 
     // Start is called before the first frame update

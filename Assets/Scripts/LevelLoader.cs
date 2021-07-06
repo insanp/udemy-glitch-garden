@@ -33,4 +33,9 @@ public class LevelLoader : MonoBehaviour
         Debug.Log("Loading Scene from " + currentSceneIndex);
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
+
+    public void LoadYouLose()
+    {
+        SceneManager.LoadScene("Lose Screen");
+    }
 }

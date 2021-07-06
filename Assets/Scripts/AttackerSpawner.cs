@@ -26,7 +26,7 @@ public class AttackerSpawner : MonoBehaviour
     private void SpawnAttacker()
     {
         int index = Random.Range(0, attackerPrefabs.Length);
-        Debug.Log(index);
+
         Spawn(index);
         totalSpawn += 1;
 

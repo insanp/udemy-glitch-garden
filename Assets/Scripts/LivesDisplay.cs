@@ -26,12 +26,17 @@ public class LivesDisplay : MonoBehaviour
         UpdateDisplay();
     }
 
-    public void TakeLives(int amount)
+    public void TakeLives(int amount = 1)
     {
         if (!HaveEnoughLives(amount)) return;
 
         lives -= amount;
         UpdateDisplay();
+
+        if (lives <= 0)
+        {
+            FindObjectOfType<LevelLoader>().LoadYouLose();
+        }
     }
 
     public bool HaveEnoughLives(int amount)

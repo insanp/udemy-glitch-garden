@@ -1491,6 +1491,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Lost Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3917630761448676857, guid: 244961a27c4557948b6f51fca40c8301, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7405072054259445418, guid: 244961a27c4557948b6f51fca40c8301, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

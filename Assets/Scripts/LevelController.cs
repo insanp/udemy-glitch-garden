@@ -45,6 +45,9 @@ public class LevelController : MonoBehaviour
     public void HandleLoseCondition()
     {
         loseLabel.SetActive(true);
+
+        // stop time and movements
+        Time.timeScale = 0;
     }
 
     public void LevelTimerFinished()

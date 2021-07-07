@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,10 +8,20 @@ public class Projectile : MonoBehaviour
     [Range(0f, 10f)][SerializeField] float currentSpeed = 5f;
     [SerializeField] int damage = 50;
 
+    GameObject projectilesParent;
+    const string PROJECTILES_PARENT_NAME = "Projectiles";
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        CreateProjectileParent();
+    }
+
+    private void CreateProjectileParent()
+    {
+        projectilesParent = GameObject.Find(PROJECTILES_PARENT_NAME);
+        if (!projectilesParent) projectilesParent = new GameObject(PROJECTILES_PARENT_NAME);
+        transform.parent = projectilesParent.transform;
     }
 
     // Update is called once per frame

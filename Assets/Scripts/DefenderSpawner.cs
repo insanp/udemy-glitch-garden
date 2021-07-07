@@ -26,6 +26,7 @@ public class DefenderSpawner : MonoBehaviour
         //Debug.Log("Mouse was clicked");
         Vector2 worldPos = GetSquareClicked();
         AttemptToPlaceDefenderAt(worldPos);
+        Debug.Log(worldPos);
     }
 
     public void SetSelectedDefender(Defender defenderToSelect)

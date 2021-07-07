@@ -1816,6 +1816,10 @@ PrefabInstance:
       propertyPath: volumeSlider
       value: 
       objectReference: {fileID: 784974782}
+    - target: {fileID: 5143471681674545504, guid: 45b3203e6de65b74d9fbdb49441affea, type: 3}
+      propertyPath: difficultySlider
+      value: 
+      objectReference: {fileID: 141264983}
     - target: {fileID: 5143471681674545505, guid: 45b3203e6de65b74d9fbdb49441affea, type: 3}
       propertyPath: m_RootOrder
       value: 4

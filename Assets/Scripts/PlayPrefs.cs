@@ -10,9 +10,11 @@ public class PlayPrefs : MonoBehaviour
     const float MIN_VOLUME = 0f;
     const float MAX_VOLUME = 1f;
 
+    const float MIN_DIFFICULTY = 0f;
+    const float MAX_DIFFICULTY = 2f;
+
     public static void SetMasterVolume(float volume)
     {
-        Debug.Log(MASTER_VOLUME_KEY + " is set to " + volume);
         if (volume < MIN_VOLUME || volume > MAX_VOLUME) return;
         PlayerPrefs.SetFloat(MASTER_VOLUME_KEY, volume);
     }
@@ -22,13 +24,14 @@ public class PlayPrefs : MonoBehaviour
         return PlayerPrefs.GetFloat(MASTER_VOLUME_KEY);
     }
 
-    public static void SetDifficulty(int difficulty)
+    public static void SetDifficulty(float difficulty)
     {
-        PlayerPrefs.SetInt(DIFFICULTY_KEY, difficulty);
+        if (difficulty < MIN_DIFFICULTY || difficulty > MAX_DIFFICULTY) return;
+        PlayerPrefs.SetFloat(DIFFICULTY_KEY, difficulty);
     }
 
     public static float GetDifficulty()
     {
-        return PlayerPrefs.GetInt(DIFFICULTY_KEY);
+        return PlayerPrefs.GetFloat(DIFFICULTY_KEY);
     }
 }

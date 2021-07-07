@@ -11,6 +11,18 @@ public class LivesDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        switch (PlayPrefs.GetDifficulty())
+        {
+            case 0:
+                lives = 5;
+                break;
+            case 1:
+                lives = 3;
+                break;
+            case 2:
+                lives = 1;
+                break;
+        }
         livesText = GetComponent<Text>();
         UpdateDisplay();
     }

@@ -6,11 +6,14 @@ using UnityEngine.UI;
 public class OptionsController : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
+    [SerializeField] Slider difficultySlider;
     [SerializeField] float defaultVolume = 0.8f;
+    [SerializeField] float defaultDifficulty = 0f;
 
     private void Start()
     {
         volumeSlider.value = PlayPrefs.GetMasterVolume();
+        difficultySlider.value = PlayPrefs.GetDifficulty();
     }
 
     private void Update()
@@ -25,11 +28,13 @@ public class OptionsController : MonoBehaviour
     public void SaveAndExit()
     {
         PlayPrefs.SetMasterVolume(volumeSlider.value);
+        PlayPrefs.SetDifficulty(difficultySlider.value);
         FindObjectOfType<LevelLoader>().LoadMainMenu();
     }
 
     public void SetDefaults()
     {
         volumeSlider.value = defaultVolume;
+        difficultySlider.value = defaultDifficulty;
     }
 }
